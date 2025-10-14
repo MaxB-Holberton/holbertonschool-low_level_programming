@@ -3,7 +3,7 @@
  * The Main Description
  */
 
-/*
+/**
  * main - the main function
  * @void - does nothing
  *
