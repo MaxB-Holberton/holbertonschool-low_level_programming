@@ -1,3 +1,4 @@
+#include "main.h" 
 /**
  * print_alphabet - Print the Alphabet
  * @void - does nothing
