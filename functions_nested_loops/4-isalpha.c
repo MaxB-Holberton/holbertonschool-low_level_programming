@@ -1,6 +1,6 @@
 /**
  * _isalpha - checks if the input is a lowercase letter
- * @c: the input 
+ * @c: the input
  *
  * Return: 1 if letter, else 0
  *

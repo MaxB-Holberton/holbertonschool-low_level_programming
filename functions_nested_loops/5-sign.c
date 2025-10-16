@@ -1,10 +1,9 @@
 #include "main.h"
 /**
  * print_sign - prints to CLI the sign of the integer
- * @n: the input 
+ * @n: the input
  *
  * Return: 1 if letter, else 0
- *
  */
 int print_sign(int n)
 {
@@ -21,6 +20,6 @@ int print_sign(int n)
 	else
 	{
 		_putchar('0');
-		return(0);
+		return (0);
 	}
 }

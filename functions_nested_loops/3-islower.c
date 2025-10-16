@@ -1,9 +1,8 @@
 /**
  * _islower - checks if the input is a lowercase letter
- * @c: the input 
+ * @c: the input
  *
  * Return: 1 if lowercase, else 0
- *
  */
 int _islower(int c)
 {

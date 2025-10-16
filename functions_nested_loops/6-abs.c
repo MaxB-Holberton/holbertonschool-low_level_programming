@@ -1,10 +1,9 @@
 #include "main.h"
 /**
  * _abs - prints the absolute value of the integer
- * @n: the input 
+ * @n: the input
  *
  * Return: 1 if letter, else 0
- *
  */
 int _abs(int n)
 {

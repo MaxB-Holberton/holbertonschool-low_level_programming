@@ -4,8 +4,8 @@
  */
 
 /**
- * main - The Main Function 
- * @void - Does nothing 
+ * main - The Main Function
+ * @void - Does nothing
  *
  * Return: 0
  */
@@ -20,5 +20,5 @@ int main(void)
 	_putchar(97);
 	_putchar(114);
 	_putchar(10);
-	return (0);	
+	return (0);
 }
