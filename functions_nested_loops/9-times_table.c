@@ -1,11 +1,11 @@
 #include "main.h"
 /**
  * times_table - prints the times table upto 9
- * @void: no input 
+ * @void: no input
  *
  * Return: no return
  */
-void times_table(void) 
+void times_table(void)
 {
 	int i;
 	int j;
@@ -15,8 +15,8 @@ void times_table(void)
 	{
 		for (j = 0; j < 10; j++)
 		{
-			n = j*i;
-			if(n > 0)
+			n = j * i;
+			if (n > 0)
 			{
 				_putchar(',');
 				_putchar(' ');

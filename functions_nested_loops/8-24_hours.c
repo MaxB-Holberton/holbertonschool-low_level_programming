@@ -1,12 +1,11 @@
 #include "main.h"
 /**
  * jack_bauer - prints 24 hours by minutes
- * @void: no input 
+ * @void: no input
  *
  * Return: no return
- *
  */
-void jack_bauer(void) 
+void jack_bauer(void)
 {
 	int h;
 	int m_t;
@@ -14,7 +13,7 @@ void jack_bauer(void)
 
 	for (h = 0; h < 24; h++)
 	{
-		for (m_t = 0; m_t < 6; m_t++) 
+		for (m_t = 0; m_t < 6; m_t++)
 		{
 			for (m = 0; m < 10; m++)
 			{
