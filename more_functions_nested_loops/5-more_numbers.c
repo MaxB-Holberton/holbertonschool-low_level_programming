@@ -9,20 +9,21 @@
 void more_numbers(void)
 {
 	int i;
-	int c;
-	int tens;
+	int j;
 	int ones;
 
-	for (i = 0; i < 10: i++)
+	for (i = 0; i < 10; i++)
 	{
-		for (c = 0; c < 15; c++)
-		{	
-			if ( c < 10)
-				ones = c;
+		for (j = 0; j < 15; j++)
+		{
+			if (j > 9)
+			{
+				_putchar('0' + (j / 10));
+				ones = j % 10;
+			}
 			else
-				_putchar('0' + c);
-			_putchar();//10
-			_putchar();//0
+				ones = j;
+			_putchar('0' + ones);
 		}
 		_putchar('\n');
 	}
