@@ -20,11 +20,11 @@ void print_triangle(int n)
 
 	for (i = 0; i < n; i++)
 	{
-		for(spaces = n - 1; i < spaces; spaces--)
+		for (spaces = n - 1; i < spaces; spaces--)
 		{
 			_putchar(' ');
 		}
-		for(hashes = 0; hashes <= i; hashes++)
+		for (hashes = 0; hashes <= i; hashes++)
 		{
 			_putchar('#');
 		}
