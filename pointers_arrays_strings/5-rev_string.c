@@ -22,5 +22,5 @@ void rev_string(char *s)
 		*endofstr = *startofstr;
 		*startofstr = buffer;
 		startofstr++;
-	} 
+	}
 }
