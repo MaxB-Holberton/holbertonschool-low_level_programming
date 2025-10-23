@@ -19,6 +19,11 @@ int _atoi(char *s)
 		{
 			i = (i * 10) + (*s - '0');
 		}
+		else
+		{
+			if (i > 0)
+				break;
+		}
 		s++;
 	}
 
