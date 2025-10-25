@@ -26,7 +26,7 @@ char *cap_string(char *s)
 	{
 		if  (*s == ' ' || *s == ',' || *s == ';' || *s == '.')
 			check_letter(s);
-		else if (*s == '!' || *s == '?' || *s == '"' || *s == '(' || *s == ')'i)
+		else if (*s == '!' || *s == '?' || *s == '"' || *s == '(' || *s == ')')
 			check_letters(s);
 		else if (*s == '\n' || *s == '\t')
 			check_letter(s);
