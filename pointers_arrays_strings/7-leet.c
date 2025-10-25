@@ -3,9 +3,9 @@
  * leet - Compare a string
  * @s: the string
  *
- * Return: char 
+ * Return: char
  */
-char *leet(char *s) 
+char *leet(char *s)
 {
 	char *cpy = s;
 	int i;

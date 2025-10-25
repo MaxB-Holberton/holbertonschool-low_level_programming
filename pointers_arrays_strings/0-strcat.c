@@ -2,7 +2,7 @@
 /**
  * _strcat - joins two strings together
  * @dest: the string destination
- * @src: the string source 
+ * @src: the string source
  *
  * Return: the string
  */

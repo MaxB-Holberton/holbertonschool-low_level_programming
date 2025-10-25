@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * check_letter - check if it is a letter
- * @s: the character 
+ * @s: the character
  *
  */
 void check_letter(char *s)
@@ -12,32 +12,28 @@ void check_letter(char *s)
 	else
 		s++;
 }
-
-
 /**
- * cap_string - Capitalise the string 
+ * cap_string - Capitalise the string
  * @s: the string
  *
- * Return: char 
+ * Return: char
  */
-char *cap_string(char *s) 
+char *cap_string(char *s)
 {
 	char *cpy = s;
 
 	while (*s != '\0')
 	{
-		if  (*s == ' ' || *s == ',' || *s == ';' || *s == '.' || *s == '!' || *s == '?' || *s == '"' || *s == '(' || *s == ')' || *s == '{' || *s == '}')
-		{
+		if  (*s == ' ' || *s == ',' || *s == ';' || *s == '.')
 			check_letter(s);
-		}
+		else if (*s == '!' || *s == '?' || *s == '"' || *s == '(' || *s == ')'i)
+			check_letters(s);
 		else if (*s == '\n' || *s == '\t')
-		{
 			check_letter(s);
-		}
+		else if (*s == '{' || *s == '}')
+			check_letter(s);
 		else
-		{
 			s++;
-		}
 	}
 	return (cpy);
 }

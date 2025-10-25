@@ -5,13 +5,13 @@
  *
  * Return: void
  */
-char *string_toupper(char *s) 
+char *string_toupper(char *s)
 {
 	char *cpy = s;
 
 	while (*s != '\0')
 	{
-		if(*s > 96 && *s < 123)
+		if (*s > 96 && *s < 123)
 		{
 			*s = *s - 32;
 		}

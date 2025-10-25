@@ -2,8 +2,8 @@
 /**
  * _strncpy  - Copy a string
  * @dest: the string destination
- * @src: the string source 
- * @n: point to 
+ * @src: the string source
+ * @n: point to
  *
  * Return: the string
  */
@@ -18,7 +18,7 @@ char *_strncpy(char *dest, char *src, int n)
 		{
 			*dest = '\0';
 		}
-		else 
+		else
 		{
 			*dest = *src;
 			src++;
