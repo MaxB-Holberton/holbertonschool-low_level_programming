@@ -8,6 +8,7 @@ void check_letter(char *s)
 {
 	if (*s > 96 && *s < 123)
 		*s = *s - 32;
+	s++;
 }
 /**
  * cap_string - Capitalise the string
@@ -42,7 +43,8 @@ char *cap_string(char *s)
 			s++;
 			check_letter(s);
 		}
-		s++;
+		else
+			s++;
 	}
 	return (cpy);
 }
