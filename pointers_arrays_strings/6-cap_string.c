@@ -19,6 +19,7 @@ void check_letter(char *s)
 char *cap_string(char *s)
 {
 	char *cpy = s;
+	int i = 0;
 
 	while (*s != '\0')
 	{
@@ -30,6 +31,11 @@ char *cap_string(char *s)
 			check_letter(s);
 		else if (*s == '{' || *s == '}')
 			check_letter(s);
+		else if (i == 0)
+		{
+			check_letter(s);
+			i++;
+		}
 		s++;
 	}
 	return (cpy);
