@@ -12,7 +12,7 @@ char *_strstr(char *s, char *accept)
 	char *checkbuffer;
 	char *cpy;
 
-	if(*accept == '\0')
+	if (*accept == '\0')
 		return (s);
 
 	while (*s != '\0')
