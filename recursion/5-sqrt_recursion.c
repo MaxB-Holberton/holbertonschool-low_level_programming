@@ -6,21 +6,30 @@
  */
 
 /**
- * _pow_recursion - prints a character array in reverse
- * @x: the 1st number
- * @y: the 2nd number
+ * root_check - checks for the sqaure root
+ * @n: the number to check
+ * @i: iterates
+ *
+ * Return: -1 if no sqaure root
+ */
+int root_check(int n, int i)
+{
+	if (n < 0)
+		return (-1);
+	if ((i * i) > n)
+		return (-1);
+	if ((i * i) == n)
+		return (i);
+	return (root_check(n, i + 1));
+}
+
+/**
+ * _sqrt_recursion - prints a character array in reverse
+ * @n: the number to check
  *
  * Return: int
  */
-int _pow_recursion(int x, int y)
+int _sqrt_recursion(int n)
 {
-	if (y < 0)
-	{
-		return (-1);
-	}
-	if (y == 0)
-	{
-		return (1);
-	}
-	return (x * _pow_recursion(x, y - 1));
+	return (root_check(n, 0));
 }
