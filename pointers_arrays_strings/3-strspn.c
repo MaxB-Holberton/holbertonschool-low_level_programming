@@ -11,17 +11,19 @@ unsigned int _strspn(char *s, char *accept)
 {
 	char *checkbuffer;
 	unsigned int i = 0;
+	unsigned int hold = 0;
 
 	while (*s != '\0')
 	{
 		checkbuffer = accept;
+		hold = i;
 		while (*checkbuffer != '\0')
 		{
 			if (*checkbuffer == *s)
 				i++;
 			checkbuffer++;
 		}
-		if (*s == ' ')
+		if (hold == i)
 			return (i);
 		s++;
 	}
