@@ -6,7 +6,7 @@
  */
 
 /**
- * _strlen_recursion - prints a character array in reverse
+ * factorial - prints a character array in reverse
  * @n: the number
  *
  * Return: int
