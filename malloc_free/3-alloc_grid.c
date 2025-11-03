@@ -3,26 +3,6 @@
 #include <stdlib.h>
 
 /**
- * init_zeros - sets the whole grid to zero
- * @grid: the grid to be set to zero
- * @width: width of the grid
- * @height: the height of the grid
- */
-void init_zeros(int **grid, int width, int height)
-{
-	int i;
-	int j;
-
-	for (i = 0; i < height; i++)
-	{
-		for (j = 0; j < width; j++)
-		{
-			grid[i][j] = 0;
-
-		}
-	}
-}
-/**
  * alloc_grid - creates the grid
  * @width: the width of the array
  * @height: the height of the array
@@ -32,6 +12,7 @@ void init_zeros(int **grid, int width, int height)
 int **alloc_grid(int width, int height)
 {
 	int i;
+	int j;
 	int **grid;
 
 	if (width < 1)
@@ -42,14 +23,26 @@ int **alloc_grid(int width, int height)
 	grid = malloc(height * sizeof(int *));
 	if (grid == NULL)
 		return (NULL);
-
 	for (i = 0; i < height; i++)
 	{
 		grid[i] = malloc(width * sizeof(int));
-		if (grid == NULL)
+		if (grid[i] == NULL)
+		{
+			for (j = 0; j < i; j++)
+			{
+				free(grid[j]);
+			}
+			free(grid);
 			return (NULL);
+		}
 	}
-	init_zeros(grid, width, height);
+	for (i = 0; i < height; i++)
+	{
+		for (j = 0; j < width; j++)
+		{
+			grid[i][j] = 0;
+		}
+	}
 	return (grid);
 }
 

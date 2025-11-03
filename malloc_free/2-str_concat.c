@@ -12,13 +12,8 @@ int _strlen(char *str)
 {
 	int i;
 
-	if (str == NULL)
-		return (0);
-	while (*str != '\0')
-	{
-		i++;
-		str++;
-	}
+	for (i = 0; str[i] != '\0'; i++)
+	{}
 	return (i);
 }
 
@@ -32,14 +27,12 @@ int _strlen(char *str)
 char *str_concat(char *s1, char *s2)
 {
 	char *buffer;
-	char *cpya = s1;
-	char *cpyb = s2;
 	int i = 0;
 	int j = 0;
-	int k;
+	int k = 0;
 
-	i = _strlen(cpya);
-	j = _strlen(cpyb);
+	i = _strlen(s1);
+	j = _strlen(s2);
 
 	buffer = malloc((sizeof(char) * (i + j)) + 1);
 	if (buffer == NULL)
