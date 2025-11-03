@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * _strlen(char *str)
+ * _strlen -  check string length
  * @str: the string to check
  *
  * Return: Length of string
@@ -34,14 +34,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	i = _strlen(s1);
 	j = _strlen(s2);
-	
+
 	if (j > n)
 		j = n;
 
 	buffer = malloc((sizeof(char) * (i + j)) + 1);
 	if (buffer == NULL)
 		return (NULL);
-	
+
 	for (k = 0; k < i; k++)
 	{
 		buffer[k] = s1[k];
