@@ -11,7 +11,7 @@
 int *array_range(int min, int max)
 {
 	int *ptr;
-	int i;
+	unsigned int i;
 	int j;
 	unsigned int mem = 0;
 
@@ -25,7 +25,7 @@ int *array_range(int min, int max)
 	if (ptr == NULL)
 		return (NULL);
 
-	for (i = 0; i <= max; i++)
+	for (i = 0; i <= mem; i++)
 	{
 		ptr[i] = min + i;
 	}
