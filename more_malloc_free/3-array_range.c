@@ -13,10 +13,11 @@ int *array_range(int min, int max)
 	int *ptr;
 	int i;
 	int j;
-	unsigned int mem;
+	unsigned int mem = 0;
 
 	if (min > max)
 		return (NULL);
+
 	for (j = min; j <= max; j++)
 		mem++;
 
