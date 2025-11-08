@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "dog.h"
 /**
- * print_dog: prints dog
+ * print_dog -  prints dog
  * @d: the dog
  *
  * Return: void
@@ -17,10 +17,7 @@ void print_dog(struct dog *d)
 	else
 		printf("%s\n", (*d).name);
 	printf("Age: ");
-	if (d->age == 0)
-		printf("(nil)\n");
-	else
-		printf("%f\n", (*d).age);
+	printf("%f\n", (*d).age);
 
 	printf("Owner: ");
 	if (d->owner == NULL)
