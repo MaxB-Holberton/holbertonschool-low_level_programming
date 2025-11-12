@@ -12,6 +12,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i;
 	int fnc_return;
+
 	if (array == NULL)
 		return (-1);
 	if (cmp == NULL)
