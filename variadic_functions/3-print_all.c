@@ -70,9 +70,8 @@ void print_all(const char * const format, ...)
 		{"f", print_float},
 		{"s", print_string}
 	};
-
 	va_start(args, format);
-	while (*format_ptr != '\0')
+	while (format_ptr && *format_ptr != '\0')
 	{
 		i = 0;
 		while (i < 4 && (*format_ptr != *(print_functions[i].op)))
