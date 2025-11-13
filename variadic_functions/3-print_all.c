@@ -3,18 +3,6 @@
 #include "variadic_functions.h"
 
 /**
- * struct f_printer - a struct for the function printer
- * @op: the symbol for the operation to print
- * @argument: the input to print
- */
-typedef struct struct_printer
-{
-        char *op;
-        void (*f_print)(va_list argument);
-
-} s_printer;
-
-/**
  * print_char - print char
  * @argument: the argument to print
  *
@@ -26,7 +14,7 @@ void print_char(va_list argument)
 }
 /**
  * print_int - print int
- * @argument: the argument to print 
+ * @argument: the argument to print
  *
  * Return: null
  */
@@ -36,7 +24,7 @@ void print_int(va_list argument)
 }
 /**
  * print_float - print float
- * @argument: the argument to print 
+ * @argument: the argument to print
  *
  * Return: null
  */
@@ -53,6 +41,7 @@ void print_float(va_list argument)
 void print_string(va_list argument)
 {
 	char *str;
+
 	str = va_arg(argument, char *);
 	if (str == NULL)
 	{
@@ -63,8 +52,7 @@ void print_string(va_list argument)
 }
 /**
  * print_all - sum numbers
- * @separator: the separator
- * @n: number of args
+ * @format: format to print
  * @...: list of args
  *
  * Return: int
@@ -75,7 +63,7 @@ void print_all(const char * const format, ...)
 	unsigned int i = 0;
 	const char *format_ptr = format;
 	char *separator = "";
-	
+
 	s_printer print_functions[] = {
 		{"c", print_char},
 		{"i", print_int},
