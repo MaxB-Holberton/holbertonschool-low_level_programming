@@ -2,7 +2,7 @@
 #include "lists.h"
 #include <stdlib.h>
 #include <string.h>
-/*
+/**
  * _strlen - get the length of a string
  * @s: the string to check
  *
@@ -12,13 +12,14 @@ int _strlen(const char *s)
 {
 	int n = 0;
 
-	for (n = 0; s[n] != '\0'; n++){}
+	for (n = 0; s[n] != '\0'; n++)
+
 	return (n);
 }
-/*
+/**
  * add_node - add a node to the start of the list
- * @head: the head of the list 
- * @str: the string to add 
+ * @head: the head of the list
+ * @str: the string to add
  *
  * Return: the item added
  */
