@@ -3,12 +3,12 @@
 #include <stdlib.h>
 #include <string.h>
 /**
- * _strlen - get the length of a string
+ * len_of_str - get the length of a string
  * @s: the string to check
  *
  * Return: the length
  */
-int _strlen(const char *s)
+int len_of_str(const char *s)
 {
 	int n = 0;
 
@@ -34,7 +34,7 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 	}
 	new_item->str = strdup(str);
-	new_item->len = _strlen(str);
+	new_item->len = len_of_str(str);
 	new_item->next = *head;
 	*head = new_item;
 
