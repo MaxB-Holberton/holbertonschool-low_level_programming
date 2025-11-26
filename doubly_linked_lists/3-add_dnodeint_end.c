@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include "lists.h"
+#include <stdlib.h>
+#include <string.h>
+
+/*
+ * add_node_end - add a node to the end of the list 
+ * @head: The head of the list
+ * @str: the string to write into the list
+ *
+ * Return: the new list item or the head of the list
+ */
+dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
+{
+	dlistint_t *new_item;
+	dlistint_t *current;
+
+	new_item = malloc(sizeof(dlistint_t));
+	if (new_item == NULL)
+	{
+		printf("Error\n");
+		return (NULL);
+	}
+	new_item->n = n;
+	new_item->next = NULL;
+
+	/*
+	 * if head is null (empty list)
+	 * make the head the new item.
+	 */
+	if (*head == NULL)
+	{
+		*head = new_item;
+		new_item->prev = NULL;
+		return (new_item);
+	}
+	/*
+	 * Find the last node in the list 
+	 * and make its next pointer point to the new item
+	 */
+	current = *head;
+	while(1)
+	{
+		if (current->next == NULL)
+			break;
+		current = current->next;
+	}
+	current->next = new_item;
+	new_item->prev = current;
+	return (*head);
+}
