@@ -2,9 +2,9 @@
 #include "lists.h"
 #include <stdlib.h>
 #include <string.h>
-/*
+/**
  * _strlen - get the length of a string
- * @s: the string to check 
+ * @s: the string to check
  *
  * Return: n - the length of string
  */
@@ -12,11 +12,12 @@ int _strlen(const char *s)
 {
 	int n = 0;
 
-	for (n = 0; s[n] != '\0'; n++){}
+	for (n = 0; s[n] != '\0'; n++)
+	{}
 	return (n);
 }
-/*
- * add_node_end - add a node to the end of the list 
+/**
+ * add_node_end - add a node to the end of the list
  * @head: The head of the list
  * @str: the string to write into the list
  *
@@ -40,18 +41,18 @@ list_t *add_node_end(list_t **head, const char *str)
 	/*
 	 * if head is null (empty list)
 	 * make the head the new item.
-	 * */
+	 */
 	if (*head == NULL)
 	{
 		*head = new_item;
 		return (new_item);
 	}
 	/*
-	 * Find the last node in the list 
+	 * Find the last node in the list
 	 * and make its next pointer point to the new item
 	 */
 	current = *head;
-	while(1)
+	while (1)
 	{
 		if (current->next == NULL)
 			break;
