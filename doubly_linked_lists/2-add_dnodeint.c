@@ -3,10 +3,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-/*
- * add_node - add a node to the start of the list
- * @head: the head of the list 
- * @str: the string to add 
+/**
+ * add_dnodeint - add a node to the start of the list
+ * @head: the head of the list
+ * @n: the int to add
  *
  * Return: the item added
  */

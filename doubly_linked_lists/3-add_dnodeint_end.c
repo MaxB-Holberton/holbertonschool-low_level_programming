@@ -3,10 +3,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-/*
- * add_node_end - add a node to the end of the list 
+/**
+ * add_dnodeint_end - add a node to the end of the list
  * @head: The head of the list
- * @str: the string to write into the list
+ * @n: the string to write into the list
  *
  * Return: the new list item or the head of the list
  */
@@ -35,11 +35,11 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 		return (new_item);
 	}
 	/*
-	 * Find the last node in the list 
+	 * Find the last node in the list
 	 * and make its next pointer point to the new item
 	 */
 	current = *head;
-	while(1)
+	while (1)
 	{
 		if (current->next == NULL)
 			break;

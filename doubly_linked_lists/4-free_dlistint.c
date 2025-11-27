@@ -2,11 +2,11 @@
 #include "lists.h"
 #include <stdlib.h>
 #include <string.h>
-/*
- * free_dlistint - Free the list 
+/**
+ * free_dlistint - Free the list
  * @head: The head of the list
  *
- * Return: nothing  
+ * Return: nothing
  */
 void free_dlistint(dlistint_t *head)
 {
