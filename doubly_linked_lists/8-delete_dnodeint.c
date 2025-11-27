@@ -4,6 +4,30 @@
 #include <string.h>
 
 /**
+ * handle_pos0 - if the function is at idx 0
+ * @current: current position
+ *
+ * Return: 1 for sucess or -1 for fail
+ */
+int handle_pos0(dlistint_t *current)
+{
+	dlistint_t *delete;
+
+	delete = current;
+	current = current->next;
+	if (current == NULL)
+	{
+		free(delete);
+		*h = NULL;
+		return (1);
+	}
+	current->prev = NULL;
+	*h = current;
+	free(delete);
+	return (1);
+
+}
+/**
  * delete_dnodeint_at_index - get the specified node
  * @h: The head of the list
  * @idx : the position of the node to delete
@@ -27,18 +51,7 @@ int delete_dnodeint_at_index(dlistint_t **h, unsigned int idx)
 	}
 	if (idx == 0)
 	{
-		delete = current;
-		current = current->next;
-		if (current == NULL)
-		{
-			free(delete);
-			*h = NULL;
-			return (1);
-		}
-		current->prev = NULL;
-		*h = current;
-		free(delete);
-		return (1);
+		return (handle_pos0(current));
 	}
 	for (i = 0; i < idx; i++)
 	{
