@@ -17,28 +17,22 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 
 	new_item = malloc(sizeof(dlistint_t));
 	if (new_item == NULL)
-	{
-		printf("Error\n");
 		return (NULL);
-	}
+
 	new_item->n = n;
 	new_item->next = NULL;
 
-	/*
-	 * if head is null (empty list)
-	 * make the head the new item.
-	 */
-	if (*head == NULL)
+	current = *head;
+	if (current == NULL)
 	{
-		*head = new_item;
 		new_item->prev = NULL;
-		return (new_item);
+		*head = new_item;
+		return (*head);
 	}
 	/*
 	 * Find the last node in the list
 	 * and make its next pointer point to the new item
 	 */
-	current = *head;
 	while (1)
 	{
 		if (current->next == NULL)
@@ -47,5 +41,5 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	}
 	current->next = new_item;
 	new_item->prev = current;
-	return (*head);
+	return (new_item);
 }

@@ -5,7 +5,6 @@
 
 /**
  * handle_pos0 - if the function is at idx 0
- * @current: current position
  * @h: pointer of pointer to head of the list
  *
  * Return: 1 for sucess or -1 for fail
