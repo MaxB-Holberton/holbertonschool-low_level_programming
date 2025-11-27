@@ -6,10 +6,11 @@
 /**
  * handle_pos0 - if the function is at idx 0
  * @current: current position
+ * @h: pointer of pointer to head of the list
  *
  * Return: 1 for sucess or -1 for fail
  */
-int handle_pos0(dlistint_t *current)
+int handle_pos0(dlistint_t *current, dlistint_t **h)
 {
 	dlistint_t *delete;
 
@@ -51,7 +52,7 @@ int delete_dnodeint_at_index(dlistint_t **h, unsigned int idx)
 	}
 	if (idx == 0)
 	{
-		return (handle_pos0(current));
+		return (handle_pos0(current, h));
 	}
 	for (i = 0; i < idx; i++)
 	{
