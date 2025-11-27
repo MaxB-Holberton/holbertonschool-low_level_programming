@@ -10,20 +10,22 @@
  *
  * Return: 1 for sucess or -1 for fail
  */
-int handle_pos0(dlistint_t *current, dlistint_t **h)
+int handle_pos0(dlistint_t **h)
 {
 	dlistint_t *delete;
+	dlistint_t *current = *h;
 
 	delete = current;
-	current = current->next;
-	if (current == NULL)
+	if (current->next == NULL)
 	{
-		free(delete);
 		*h = NULL;
-		return (1);
 	}
-	current->prev = NULL;
-	*h = current;
+	else
+	{
+		current = current->next;
+		current->prev = NULL;
+		*h = current;
+	}
 	free(delete);
 	return (1);
 
@@ -42,18 +44,13 @@ int delete_dnodeint_at_index(dlistint_t **h, unsigned int idx)
 	dlistint_t *delete;
 	unsigned int i = 0;
 
-	if (h == NULL)
+	if (h == NULL || *h == NULL)
 		return (-1);
 
-	current = *h;
-	if (current == NULL)
-	{
-		return (-1);
-	}
 	if (idx == 0)
-	{
-		return (handle_pos0(current, h));
-	}
+		return (handle_pos0(h));
+
+	current = *h;
 	for (i = 0; i < idx; i++)
 	{
 		if (current == NULL)
