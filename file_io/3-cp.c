@@ -57,7 +57,7 @@ int copy_func(int fd_read, int fd_write, char *buffer)
 
 	while (read_file != 0)
 	{
-		read_file = read(fd_read, buffer, 1024);
+		read_file = read(fd_read, buffer, 1025);
 
 		if (read_file < 0)
 			return (98);
@@ -120,7 +120,7 @@ int main(int argc, char *argv[])
 	if (fd_write < 0)
 		file_to_error(file_to);
 
-	buffer = malloc(1024 * sizeof(char));
+	buffer = malloc(1025 * sizeof(char));
 	if (buffer == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: failed to allocate memory\n");
