@@ -10,9 +10,9 @@
  *
  * Return: void
  */
-void file_from_error(const char *file_from)
+void file_from_error(char *file_from)
 {
-	dprintf(2, "Error: Can't read from file %d\n", *file_from);
+	dprintf(2, "Error: Can't read from file %s\n", file_from);
 	exit(98);
 }
 /**
@@ -21,9 +21,9 @@ void file_from_error(const char *file_from)
  *
  * Return: void
  */
-void file_to_error(const char *file_to)
+void file_to_error(char *file_to)
 {
-	dprintf(2, "Error: Can't write to %d\n", *file_to);
+	dprintf(2, "Error: Can't write to %s\n", file_to);
 	exit(99);
 }
 
@@ -87,36 +87,38 @@ int copy_func(int fd_read, int fd_write, char *buffer)
 
 /**
  * main - function to copy the file
- * @ac: argc
- * @av: argv
+ * @argc: argc
+ * @argv: argv
  *
  * Return: 0 on success
  */
-int main(int ac, char **av)
+int main(int argc, char *argv[])
 {
 	int fd_read;
 	int fd_write;
 	char *buffer;
 	int res;
+	char *file_from = argv[1];
+	char *file_to = argv[2];
 
-	if (ac != 3)
+	if (argc != 3)
 	{
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	if (av[1] == NULL)
-		file_from_error(av[2]);
+	if (file_from == NULL)
+		file_from_error(file_from);
 
-	if (av[2] == NULL)
-		file_to_error(av[2]);
+	if (file_to == NULL)
+		file_to_error(file_to);
 
-	fd_read = open(av[1], O_RDONLY);
+	fd_read = open(file_from, O_RDONLY);
 	if (fd_read < 0)
-		file_from_error(av[1]);
+		file_from_error(file_from);
 
-	fd_write = open(av[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
+	fd_write = open(file_to, O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (fd_write < 0)
-		file_to_error(av[2]);
+		file_to_error(file_to);
 
 	buffer = malloc(1024 * sizeof(char));
 	if (buffer == NULL)
@@ -127,9 +129,9 @@ int main(int ac, char **av)
 	res = copy_func(fd_read, fd_write, buffer);
 	free(buffer);
 	if (res == 98)
-		file_from_error(av[1]);
+		file_from_error(file_from);
 	if (res == 99)
-		file_to_error(av[2]);
+		file_to_error(file_to);
 	return (0);
 }
 
