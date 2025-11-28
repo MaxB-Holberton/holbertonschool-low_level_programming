@@ -11,15 +11,15 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int file_int;
+	int fd;
 	ssize_t file_write;
 	ssize_t *buffer;
 	ssize_t read_file;
 
 	if (filename == NULL)
 		return (0);
-	file_int = open(filename, O_RDONLY);
-	if (file_int < 0)
+	fd = open(filename, O_RDONLY);
+	if (fd < 0)
 		return (0);
 
 	buffer = malloc((letters + 1) * sizeof(char));
@@ -27,17 +27,17 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		return (0);
 	}
-	read_file = read(file_int, buffer, letters);
+	read_file = read(fd, buffer, letters);
 	if (read_file < 0)
 	{
 		free(buffer);
 		return (0);
 	}
 
-	file_write = write(file_int, buffer, read_file);
+	file_write = write(STDOUT_FILENO, buffer, read_file);
 	if (file_write < 0)
 		return (0);
 	free(buffer);
-	close(file_int);
+	close(fd);
 	return (file_write);
 }
