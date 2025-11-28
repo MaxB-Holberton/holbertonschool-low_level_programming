@@ -58,7 +58,6 @@ int copy_func(int fd_read, int fd_write, char *buffer)
 	while (read_file != 0)
 	{
 		read_file = read(fd_read, buffer, 1024);
-		printf("file read -> %ld\n", read_file);
 
 		if (read_file < 0)
 			return (98);
