@@ -12,7 +12,7 @@
  */
 void file_from_error(char *file_from)
 {
-	dprintf(2, "Error: Can't read from file %s\n", file_from);
+	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 	exit(98);
 }
 /**
@@ -23,7 +23,7 @@ void file_from_error(char *file_from)
  */
 void file_to_error(char *file_to)
 {
-	dprintf(2, "Error: Can't write to %s\n", file_to);
+	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 	exit(99);
 }
 
@@ -73,12 +73,12 @@ int copy_func(int fd_read, int fd_write, char *buffer)
 	}
 	if (close(fd_read) < 0)
 	{
-		dprintf(28, "Error: Can't close fd %d\n", fd_read);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_read);
 		exit(100);
 	}
 	if (close(fd_write) < 0)
 	{
-		dprintf(28, "Error: Can't close fd %d\n", fd_write);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_write);
 		exit(100);
 	}
 	return (0);
@@ -103,7 +103,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprintf(2, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	if (file_from == NULL)
@@ -123,7 +123,7 @@ int main(int argc, char *argv[])
 	buffer = malloc(1024 * sizeof(char));
 	if (buffer == NULL)
 	{
-		dprintf(28, "Error: failed to allocate memory\n");
+		dprintf(STDERR_FILENO, "Error: failed to allocate memory\n");
 		exit(28);
 	}
 	res = copy_func(fd_read, fd_write, buffer);
