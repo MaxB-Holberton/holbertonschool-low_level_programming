@@ -14,6 +14,8 @@ void hash_table_print(const hash_table_t *ht)
 	hash_node_t *current;
 	unsigned long int size = ht->size;
 
+	int toggle_comma = 0;
+
 	if (ht == NULL)
 		return;
 
@@ -26,11 +28,12 @@ void hash_table_print(const hash_table_t *ht)
 
 		while (current != NULL)
 		{
-			printf("'%s' : '%s'", current->key, current->value);
-
-			if (current != NULL)
+			if (toggle_comma != 0)
 				printf(", ");
+
+			printf("'%s' : '%s'", current->key, current->value);
 			current = current->next;
+			toggle_comma = 1;
 		}
 	}
 	printf("}\n");

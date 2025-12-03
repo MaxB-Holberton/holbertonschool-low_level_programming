@@ -14,20 +14,24 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	unsigned long int index;
 	hash_node_t *current;
 
-	int key_compare;
-
-	index = key_index((unsigned char *)key, ht->size);
-	if (ht->array[index] == NULL)
+	if(ht == NULL || key == NULL)
 		return (NULL);
 
-	if (ht->array[index]->next == NULL)
-		return (ht->array[index]->value);
+	index = key_index((unsigned char *)key, ht->size);
+	current = ht->array[index];
 
-	current = ht->array[index]->next;
-	while (current != NULL)
+	if (current == NULL)
 	{
-		key_compare = strcmp(key, current->key);
-		if (key_compare == 0)
+		printf("null val\n");
+		return (NULL);
+	}
+
+	if (strcmp(key, current->key) == 0)
+		return (current->value);
+
+	while (current->next != NULL)
+	{
+		if (strcmp(key, current->key) == 0)
 			return (current->value);
 
 		current = current->next;
