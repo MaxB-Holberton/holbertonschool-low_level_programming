@@ -21,10 +21,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	current = ht->array[index];
 
 	if (current == NULL)
-	{
-		printf("null val\n");
 		return (NULL);
-	}
 
 	if (strcmp(key, current->key) == 0)
 		return (current->value);
