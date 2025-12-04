@@ -4,7 +4,7 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_delet - delete the hash table
+ * hash_table_delete - delete the hash table
  * @ht: the hash table to use
  *
  * Return: void
@@ -31,8 +31,10 @@ void hash_table_delete(hash_table_t *ht)
 			free(current->key);
 			free(current->value);
 			free(current);
-			current = NULL;
 			current = next_node;
 		}
 	}
+	free(ht->array);
+	free(ht);
+	ht = NULL;
 }
